@@ -34,7 +34,41 @@
 }
 
 header {
-  background-color: purple;
+  background-color: rgb(86, 43, 129);
   color: white;
   font-size: 28px;
+}
+
+img {
+  width: 500px;
+}
+
+input {
+  width: 500px;
+  padding: 6px;
+  margin-top: 15px;
+}
+
+textarea {
+  margin-top: 15px;
+}
+
+label {
+  font-size: 20px;
+}
+
+form p:nth-child(1) {
+  font-size: 35px;
+  font-display: bold;
+}
+
+button {
+  position: relative;
+  left: 430px;
+  padding: 5px 10px;
+  width: 70px;
+  border-radius: 15%;
+  border-color: rgb(86, 43, 129);
+  background-color: rgb(86, 43, 129);
+  color: white;
 }
