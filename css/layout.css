@@ -32,3 +32,9 @@
     width: 50%;
   }
 }
+
+header {
+  background-color: purple;
+  color: white;
+  font-size: 28px;
+}
