@@ -16,6 +16,55 @@
 .column-full,
 .column-half {
   width: 100%;
+  flex-wrap: wrap;
+}
+
+header {
+  background-color: rgb(86, 43, 129);
+  color: white;
+  font-size: 28px;
+}
+
+input {
+  flex-basis: 50%;
+  position: relative;
+  width: 300px;
+  padding: 6px;
+  margin-top: 15px;
+}
+
+textarea {
+  margin-top: 15px;
+  flex-basis: 75%;
+}
+
+label {
+  font-size: 20px;
+  flex-basis: 75%;
+}
+
+form p:nth-child(1) {
+  font-size: 35px;
+}
+
+button {
+  position: relative;
+  left: 430px;
+  padding: 5px 10px;
+  width: 70px;
+  border-radius: 15%;
+  border-color: rgb(86, 43, 129);
+  background-color: rgb(86, 43, 129);
+  color: white;
+}
+
+.form-entry {
+  flex-basis: wrap;
+}
+
+img {
+  width: 300px;
+  column-fill: auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -31,44 +80,33 @@
   .column-half {
     width: 50%;
   }
-}
 
-header {
-  background-color: rgb(86, 43, 129);
-  color: white;
-  font-size: 28px;
-}
+  img {
+    width: 300px;
+    column-fill: auto;
+  }
 
-img {
-  width: 500px;
-}
+  input {
+    flex-basis: 50%;
+    position: relative;
+    width: 300px;
+    padding: 6px;
+    margin-top: 15px;
+  }
 
-input {
-  width: 500px;
-  padding: 6px;
-  margin-top: 15px;
-}
+  textarea {
+    margin-top: 15px;
+    flex-basis: 75%;
+  }
 
-textarea {
-  margin-top: 15px;
-}
-
-label {
-  font-size: 20px;
-}
-
-form p:nth-child(1) {
-  font-size: 35px;
-  font-display: bold;
-}
-
-button {
-  position: relative;
-  left: 430px;
-  padding: 5px 10px;
-  width: 70px;
-  border-radius: 15%;
-  border-color: rgb(86, 43, 129);
-  background-color: rgb(86, 43, 129);
-  color: white;
+  button {
+    position: relative;
+    left: 230px;
+    padding: 5px 10px;
+    width: 70px;
+    border-radius: 15%;
+    border-color: rgb(86, 43, 129);
+    background-color: rgb(86, 43, 129);
+    color: white;
+  }
 }

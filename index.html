@@ -33,29 +33,34 @@
             <p> New Entry </p>
           </div>
         </div>
+
         <div class="row">
           <div class="column-half">
             <img src="images/placeholder-image-square.jpg" alt="placeholder">
             <br>
           </div>
-          <div class="coloum-half">
-            <p>
-              <label> <strong>Title</strong> <br>
-                <input type="text" name="name" maxlength="40">
-              </label>
-            </p>
 
-            <p>
-              <label><strong>Photo URL</strong>
-                <input type="url" name="url" size="30">
-              </label>
-            </p>
+          <div class="column-half">
+            <div class="form-entry">
+              <p>
+                <label for="title"> <strong>Title</strong> <br>
+                  <input id="title" type="text" name="name" maxlength="40" required>
+                </label>
+              </p>
+
+              <p>
+                <label for="photo"><strong>Photo URL</strong> <br>
+                  <input id="myUrl" type="url" name="myUrl" size="30" required>
+                </label>
+              </p>
+            </div>
           </div>
         </div>
+
         <div class="row">
           <div class="column-full">
             <p>
-              <label>
+              <label for="notes">
                 <strong>Notes</strong> <br>
                 <textarea name="notes" cols="65" rows="10"></textarea>
               </label>
