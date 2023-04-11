@@ -43,10 +43,9 @@ label {
   flex-basis: 75%;
 }
 
-/*
 form p:nth-child(1) {
   font-size: 35px;
-} */
+}
 
 button {
   position: relative;
