@@ -26,3 +26,36 @@ function subButton(event) {
   $form.reset();
 
 }
+/* ---------------------------------------------------------------------
+-----------------ENTRY PART FEATURE 2 ------------------------------ */
+
+function renderEntry(entry) {
+
+  const $top = document.createElement('div');
+  $top.className = 'row';
+
+  const $rested = document.createElement('div');
+  $rested.className = 'column-half';
+
+  const $rest = document.createElement('div');
+  $rest.className = 'column-half';
+
+  const $pic = document.createElement('img');
+  $pic.className = data.entries.photo;
+
+  const $ename = document.createElement('p');
+  $ename.className = data.entries.title;
+
+  const $not = document.createElement('p');
+  $not.className = data.entries.notes;
+
+  $top.appendChild($rest);
+  $top.appendChild($rested);
+  $rest.appendChild($pic);
+  $rested.appendChild($ename);
+  $rested.appendChild($not);
+
+  return $top;
+
+}
+renderEntry();
