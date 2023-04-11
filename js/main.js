@@ -58,4 +58,13 @@ function renderEntry(entry) {
   return $top;
 
 }
-renderEntry();
+
+document.addEventListener('DOMContentLoaded', loads);
+
+function loads() {
+  for (let i = 0; i < data.entries.length; i++) {
+    const $row = document.querySelector('.row');
+    $row.appendChild(renderEntry(data.entries[i]));
+
+  }
+}
