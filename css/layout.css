@@ -43,9 +43,10 @@ label {
   flex-basis: 75%;
 }
 
+/*
 form p:nth-child(1) {
   font-size: 35px;
-}
+} */
 
 button {
   position: relative;
@@ -68,9 +69,7 @@ img {
 }
 
 .sub {
-  justify-content: flex-end;
   text-align: end;
-  align-items: flex-end;
 }
 
 @media screen and (min-width: 768px) {
