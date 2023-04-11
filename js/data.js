@@ -10,4 +10,6 @@ let data = {
 window.addEventListener('beforeunload', tons);
 
 function tons(event) {
+  const dataJSON = JSON.stringify(data);
+  localStorage.setItem('data', dataJSON);
 }

@@ -25,4 +25,5 @@ function subButton(event) {
   data.entries.push(entry);
   img.setAttribute('src', 'images/placeholder-image-square.jpg');
   form.reset();
+
 }
