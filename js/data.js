@@ -1,6 +1,6 @@
 /* exported data */
 
-var data = {
+let data = {
   view: 'entry-form',
   entries: [],
   editing: null,
@@ -10,6 +10,10 @@ var data = {
 window.addEventListener('beforeunload', tons);
 
 function tons(event) {
-//   const dada = JSON.stringify(data);
-
+  const dataJSON = JSON.stringify(data);
+  localStorage.setItem('data', dataJSON);
+}
+const oldData = localStorage.getItem('data');
+if (oldData !== null) {
+  data = JSON.parse(oldData);
 }

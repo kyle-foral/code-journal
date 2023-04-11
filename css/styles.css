@@ -1,0 +1,16 @@
+form p:nth-child(1) {
+  font-size: 35px;
+}
+
+button {
+  border-radius: 15%;
+  border-color: rgb(86, 43, 129);
+  background-color: rgb(86, 43, 129);
+  color: white;
+}
+
+header {
+  background-color: rgb(86, 43, 129);
+  color: white;
+  font-size: 28px;
+}
