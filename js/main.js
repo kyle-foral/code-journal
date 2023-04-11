@@ -30,6 +30,7 @@ function subButton(event) {
 -----------------ENTRY PART FEATURE 2 ------------------------------ */
 
 function renderEntry(entry) {
+  const $li = document.createElement('li');
 
   const $top = document.createElement('div');
   $top.className = 'row';
@@ -41,30 +42,29 @@ function renderEntry(entry) {
   $rest.className = 'column-half';
 
   const $pic = document.createElement('img');
-  $pic.className = data.entries.photo;
+  $pic.src = data.entries.photo;
 
   const $ename = document.createElement('p');
-  $ename.className = data.entries.title;
+  $ename.textContent = data.entries.title;
 
   const $not = document.createElement('p');
-  $not.className = data.entries.notes;
+  $not.textContent = data.entries.notes;
 
+  $li.appendChild($top);
   $top.appendChild($rest);
   $top.appendChild($rested);
   $rest.appendChild($pic);
   $rested.appendChild($ename);
   $rested.appendChild($not);
 
-  return $top;
-
+  return $li;
 }
 
-document.addEventListener('DOMContentLoaded', loads);
+document.addEventListener('DOMContentLoaded', renderEntry);
 
-function loads() {
-  for (let i = 0; i < data.entries.length; i++) {
-    const $row = document.querySelector('.row');
-    $row.appendChild(renderEntry(data.entries[i]));
-
-  }
+for (let i = 0; i < data.entries.length; i++) {
+  const $unl = document.querySelector('ul');
+  $unl.appendChild(renderEntry(data.entries[i]));
 }
+
+// console.log(renderEntry(data.entries[2]));
