@@ -13,3 +13,7 @@ function tons(event) {
   const dataJSON = JSON.stringify(data);
   localStorage.setItem('data', dataJSON);
 }
+const oldData = localStorage.getItem('data');
+if (oldData !== null) {
+  data = JSON.parse(oldData);
+}
