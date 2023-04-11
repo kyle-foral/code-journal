@@ -7,14 +7,9 @@ var data = {
   nextEntryId: 1
 };
 
-const photo = document.querySelector('.photo');
+window.addEventListener('beforeunload', tons);
 
-photo.addEventListener('input', picUrl);
-
-function picUrl(event) {
-
-  const img = document.querySelector('img');
-
-  img.setAttribute('src', 'img data');
+function tons(event) {
+//   const dada = JSON.stringify(data);
 
 }

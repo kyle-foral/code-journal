@@ -28,14 +28,14 @@ header {
 input {
   flex-basis: 50%;
   position: relative;
-  width: 300px;
+  width: 100%;
   padding: 6px;
   margin-top: 15px;
 }
 
 textarea {
   margin-top: 15px;
-  flex-basis: 75%;
+  width: 100%;
 }
 
 label {
@@ -49,7 +49,7 @@ form p:nth-child(1) {
 
 button {
   position: relative;
-  left: 430px;
+  flex-basis: end;
   padding: 5px 10px;
   width: 70px;
   border-radius: 15%;
@@ -63,8 +63,14 @@ button {
 }
 
 img {
-  width: 300px;
+  width: 100%;
   column-fill: auto;
+}
+
+.sub {
+  justify-content: flex-end;
+  text-align: end;
+  align-items: flex-end;
 }
 
 @media screen and (min-width: 768px) {
@@ -82,14 +88,14 @@ img {
   }
 
   img {
-    width: 300px;
+    width: 100%;
     column-fill: auto;
   }
 
   input {
     flex-basis: 50%;
     position: relative;
-    width: 300px;
+    width: 100%;
     padding: 6px;
     margin-top: 15px;
   }
@@ -97,16 +103,22 @@ img {
   textarea {
     margin-top: 15px;
     flex-basis: 75%;
+    width: 100%;
   }
 
   button {
     position: relative;
-    left: 230px;
     padding: 5px 10px;
     width: 70px;
     border-radius: 15%;
     border-color: rgb(86, 43, 129);
     background-color: rgb(86, 43, 129);
     color: white;
+  }
+
+  .sub {
+    justify-content: flex-end;
+    text-align: end;
+    align-items: flex-end;
   }
 }
