@@ -51,6 +51,7 @@ button {
 img {
   width: 100%;
   column-fill: auto;
+  margin-bottom: 20px;
 }
 
 .sub {
