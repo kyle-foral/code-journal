@@ -1,23 +1,28 @@
-
 const photoImg = document.getElementById('myUrl');
 photoImg.addEventListener('input', picUrl);
 
+const img = document.querySelector('img');
+
 function picUrl(event) {
-  const img = document.querySelector('img');
   img.setAttribute('src', event.target.value);
 }
 
-const save = document.getElementById('save');
-save.addEventListener('submit', subButton);
-// const forms = document.querySelector('.entry-form');
+const form = document.querySelector('#form-id');
 
-// const titles = document.querySelector('#title');
-// const photos = document.querySelector('#myUrl');
+form.addEventListener('submit', subButton);
+
 function subButton(event) {
   event.preventDefault();
-  // const entryId = {
-  //   titles: forms.elements.title.value,
-  //   photos: forms.elements.pics.value
-  // };
-  // console.log(entryId);
+  const entry = {
+    entryId: data.nextEntryId,
+    title: event.target.elements.title.value,
+    photo: event.target.elements.myUrl.value,
+    notes: event.target.elements.notes.value
+  };
+  if (entry.entryId === data.nextEntryId) {
+    data.nextEntryId++;
+  }
+  data.entries.push(entry);
+  img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  form.reset();
 }

@@ -1,6 +1,6 @@
 /* exported data */
 
-var data = {
+let data = {
   view: 'entry-form',
   entries: [],
   editing: null,
@@ -10,6 +10,4 @@ var data = {
 window.addEventListener('beforeunload', tons);
 
 function tons(event) {
-//   const dada = JSON.stringify(data);
-
 }
