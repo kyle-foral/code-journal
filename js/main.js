@@ -64,3 +64,13 @@ for (let i = 0; i < data.entries.length; i++) {
   const $unl = document.querySelector('ul');
   $unl.appendChild(renderEntry(data.entries[i]));
 }
+
+function toggleNoEntries() {
+  const $noEntry = document.querySelector('.no-entry');
+  if (data.entries !== null) {
+    $noEntry.className = 'p hidden';
+  } else {
+    $noEntry.className = 'p';
+  }
+}
+toggleNoEntries();

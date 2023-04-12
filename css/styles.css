@@ -22,3 +22,7 @@ header {
 ul {
   list-style: none;
 }
+
+.view {
+  display: flex;
+}
