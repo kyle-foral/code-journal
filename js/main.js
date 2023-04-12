@@ -20,11 +20,9 @@ function subButton(event) {
     notes: event.target.elements.notes.value
   };
   data.nextEntryId++;
-
   data.entries.unshift(entry);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
-
 }
 /* ---------------------------------------------------------------------
 -----------------ENTRY PART FEATURE 2 ------------------------------ */
@@ -42,13 +40,13 @@ function renderEntry(entry) {
   $rest.className = 'column-half';
 
   const $pic = document.createElement('img');
-  $pic.src = data.entries.photo;
+  $pic.src = entry.photo;
 
   const $ename = document.createElement('p');
-  $ename.textContent = data.entries.title;
+  $ename.textContent = entry.title;
 
   const $not = document.createElement('p');
-  $not.textContent = data.entries.notes;
+  $not.textContent = entry.notes;
 
   $li.appendChild($top);
   $top.appendChild($rest);
@@ -66,5 +64,3 @@ for (let i = 0; i < data.entries.length; i++) {
   const $unl = document.querySelector('ul');
   $unl.appendChild(renderEntry(data.entries[i]));
 }
-
-// console.log(renderEntry(data.entries[2]));
