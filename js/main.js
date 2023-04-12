@@ -42,18 +42,17 @@ function renderEntry(entry) {
   $rest.className = 'column-half';
 
   const $pic = document.createElement('img');
-  if (data.entries.photo === 'undefined') {
-    $pic.src = 'https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*';
+  if (entry.photo === 'undefined') {
+    $pic.src = 'images/placeholder-image-square.jpg';
   } else {
-    $pic.src = data.entries.photo;
+    $pic.src = entry.photo;
   }
-  // console.log(data.entries.photo);
 
   const $ename = document.createElement('p');
-  $ename.textContent = data.entries.title;
+  $ename.textContent = entry.title;
 
   const $not = document.createElement('p');
-  $not.textContent = data.entries.notes;
+  $not.textContent = entry.notes;
 
   $li.appendChild($top);
   $top.appendChild($rest);
@@ -70,6 +69,7 @@ document.addEventListener('DOMContentLoaded', renderEntry);
 for (let i = 0; i < data.entries.length; i++) {
   const $unl = document.querySelector('ul');
   $unl.appendChild(renderEntry(data.entries[i]));
+  if (data.entries === null) {
+    // console.log('empty');
+  }
 }
-
-// console.log(renderEntry(data.entries[2]));
