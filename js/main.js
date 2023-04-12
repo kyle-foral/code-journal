@@ -69,8 +69,12 @@ function toggleNoEntries() {
   const $noEntry = document.querySelector('.no-entry');
   if (data.entries !== null) {
     $noEntry.className = 'p hidden';
-  } else {
-    $noEntry.className = 'p';
   }
 }
 toggleNoEntries();
+
+function viewSwap(entries) {
+  const $dataView = document.querySelectorAll('data-view');
+  $dataView.className = 'data-view entries';
+}
+viewSwap();
