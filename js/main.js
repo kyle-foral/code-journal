@@ -19,10 +19,17 @@ function subButton(event) {
     photo: event.target.elements.myUrl.value,
     notes: event.target.elements.notes.value
   };
+  const $ul = document.querySelector('ul');
+  $ul.appendChild(renderEntry(entry));
+  viewSwap('entries');
+  if ($ul !== null) {
+    toggleNoEntries();
+  }
   data.nextEntryId++;
   data.entries.unshift(entry);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
+  return false;
 }
 /* ---------------------------------------------------------------------
 -----------------ENTRY PART FEATURE 2 ------------------------------ */
@@ -66,11 +73,11 @@ for (let i = 0; i < data.entries.length; i++) {
 }
 
 function toggleNoEntries() {
-  const $noEntry = document.querySelector('.no-entry');
+  const $none = document.querySelector('.none');
   if (data.entries !== null) {
-    $noEntry.className = 'p hidden';
+    $none.className = 'none hidden';
   }
-} toggleNoEntries();
+}toggleNoEntries();
 
 function viewSwap(entries) {
   const $entries = document.querySelector('.entries');
