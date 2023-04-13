@@ -64,20 +64,22 @@ function renderEntry(entry) {
 
   return $li;
 }
-
-document.addEventListener('DOMContentLoaded', renderEntry);
-
-for (let i = 0; i < data.entries.length; i++) {
-  const $unl = document.querySelector('ul');
-  $unl.appendChild(renderEntry(data.entries[i]));
+const $unl = document.querySelector('ul');
+document.addEventListener('DOMContentLoaded', function () {
+  for (let i = 0; i < data.entries.length; i++) {
+    $unl.appendChild(renderEntry(data.entries[i]));
+  }
+  viewSwap(data.view);
+  toggleNoEntries();
 }
+);
 
 function toggleNoEntries() {
   const $none = document.querySelector('.none');
-  if (data.entries !== null) {
+  if (data.entries !== 0) {
     $none.className = 'none hidden';
   }
-}toggleNoEntries();
+}
 
 function viewSwap(entries) {
   const $entries = document.querySelector('.entries');
@@ -89,6 +91,7 @@ function viewSwap(entries) {
     $eform.className = 'eform';
     $entries.className = 'entries hidden';
   }
+  data.view = entries;
 }
 
 const $entryTop = document.querySelector('.entry');
