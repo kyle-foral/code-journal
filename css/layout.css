@@ -51,10 +51,31 @@ button {
 img {
   width: 100%;
   column-fill: auto;
+  margin-bottom: 20px;
 }
 
 .sub {
   text-align: end;
+}
+
+.entry {
+  margin-top: 28px;
+  margin-left: 15px;
+}
+
+.titles {
+  display: flex;
+  position: relative;
+}
+
+.new {
+  padding: 10px;
+}
+
+.top-r {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 768px) {
@@ -100,5 +121,10 @@ img {
     justify-content: flex-end;
     text-align: end;
     align-items: flex-end;
+  }
+
+  .titles {
+    display: flex;
+    position: relative;
   }
 }

@@ -14,3 +14,31 @@ header {
   color: white;
   font-size: 28px;
 }
+
+.entry-name {
+  font-size: 26px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.view {
+  display: flex;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.titles {
+  font-size: 35px;
+}
+
+.new {
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: rgb(86, 43, 129);
+}
