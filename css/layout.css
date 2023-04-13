@@ -58,6 +58,17 @@ img {
   text-align: end;
 }
 
+a {
+  margin-top: 28px;
+  margin-left: 15px;
+}
+
+.new {
+  justify-content: flex-end;
+  text-align: end;
+  align-items: flex-end;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;

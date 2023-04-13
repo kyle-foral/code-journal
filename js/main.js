@@ -74,7 +74,17 @@ function toggleNoEntries() {
 toggleNoEntries();
 
 function viewSwap(entries) {
-  const $dataView = document.querySelectorAll('data-view');
-  $dataView.className = 'data-view entries';
+  const formID = document.querySelector('.formID');
+  entries.className = 'div data view hidden';
+  for (let i = 0; i < formID.length; i++) {
+    if (formID[i] === 'entries') {
+      entries.className = 'div data view hidden';
+    } else {
+      entries.className = 'div data view';
+    }
+  }
+
 }
-viewSwap();
+
+const $entryTop = document.querySelector('a');
+$entryTop.addEventListener('click', viewSwap);

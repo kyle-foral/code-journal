@@ -26,3 +26,17 @@ ul {
 .view {
   display: flex;
 }
+
+a {
+  color: white;
+}
+
+.titles {
+  font-size: 35px;
+}
+
+.new {
+  color: black;
+  border-bottom: none;
+  font-size: 15px;
+}
