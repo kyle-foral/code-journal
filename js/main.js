@@ -64,15 +64,16 @@ function renderEntry(entry) {
 
   return $li;
 }
+
 const $unl = document.querySelector('ul');
+
 document.addEventListener('DOMContentLoaded', function () {
   for (let i = 0; i < data.entries.length; i++) {
     $unl.appendChild(renderEntry(data.entries[i]));
   }
   viewSwap(data.view);
   toggleNoEntries();
-}
-);
+});
 
 function toggleNoEntries() {
   const $none = document.querySelector('.none');
