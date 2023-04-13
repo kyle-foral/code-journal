@@ -58,19 +58,26 @@ img {
   text-align: end;
 }
 
-a {
+.entry {
   margin-top: 28px;
   margin-left: 15px;
 }
 
+.titles {
+  display: flex;
+  margin-bottom: 0;
+  margin-right: 55px;
+  padding-left: 50px;
+}
+
 .new {
-  position: relative;
   justify-content: flex-end;
   text-align: end;
-  align-items: flex-end;
+  align-self: flex-end;
   padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 300px;
 }
-.titles { margin-bottom: 0; }
 
 @media screen and (min-width: 768px) {
   .container {
@@ -115,5 +122,20 @@ a {
     justify-content: flex-end;
     text-align: end;
     align-items: flex-end;
+  }
+
+  .titles {
+    margin-bottom: 0;
+    margin-right: 55px;
+  }
+
+  .new {
+    position: relative;
+    justify-content: flex-end;
+    text-align: end;
+    align-self: flex-end;
+    padding: 10px;
+    margin-left: 500px;
+    margin-bottom: 15px;
   }
 }
