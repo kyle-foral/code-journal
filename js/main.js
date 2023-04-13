@@ -22,7 +22,7 @@ function subButton(event) {
   const $ul = document.querySelector('ul');
   $ul.appendChild(renderEntry(entry));
   viewSwap('entries');
-  if ($ul !== null) {
+  if (data.entries !== 0) {
     toggleNoEntries();
   }
   data.nextEntryId++;
@@ -76,9 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function toggleNoEntries() {
   const $none = document.querySelector('.none');
-  if (data.entries !== 0) {
-    $none.className = 'none hidden';
-  }
+  $none.className = 'none hidden';
 }
 
 function viewSwap(entries) {
