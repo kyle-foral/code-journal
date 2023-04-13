@@ -2,10 +2,6 @@
   display: none !important;
 }
 
-.shown {
-  display: block;
-}
-
 .container {
   max-width: 575px;
   margin: 0 auto;

@@ -70,42 +70,26 @@ function toggleNoEntries() {
   if (data.entries !== null) {
     $noEntry.className = 'p hidden';
   }
-}
-toggleNoEntries();
+} toggleNoEntries();
 
 function viewSwap(entries) {
-  let $tab = document.getElementsByClassName('.data-view');
-  // console.log($tab);
-  if ($tab === 'data view shown') {
-    $tab = 'data view hidden';
-    // console.log('asd');
+  const $entries = document.querySelector('.entries');
+  const $eform = document.querySelector('.eform');
+  if (entries === 'entries') {
+    $eform.className = 'eform hidden';
+    $entries.className = 'entries';
+  } else {
+    $eform.className = 'eform';
+    $entries.className = 'entries hidden';
   }
 }
-//   const $tabs = document.querySelectorAll('.data-view');
-//   if (event.target.matches('.entry')) {
-//     for (let i = 0; i < $tabs.length; i++) {
-//       if (event.target === $tabs[i]) {
-//         $tabs[i].className = 'data view shown';
-//       } else {
-//         $tabs[i].className = 'data view hidden';
-//       }
-//     }
-//   }
-// }
-
-//   if (event.target.matches('a')){
-//   const formID = document.querySelector('.formID');
-//   entries.className = 'div data view hidden';
-//     if (event.target.matches('a')) {
-//   for (let i = 0; i < formID.length; i++) {
-//     if (formID[i] === 'entries') {
-//       entries.className = 'hidden';
-//     } else {
-//       entries.className = 'shown';
-//     }
-//   }
-
-// }
 
 const $entryTop = document.querySelector('.entry');
-$entryTop.addEventListener('click', viewSwap);
+$entryTop.addEventListener('click', function () {
+  viewSwap('entries');
+});
+
+const $new = document.querySelector('.new');
+$new.addEventListener('click', function () {
+  viewSwap('entry-form');
+});
