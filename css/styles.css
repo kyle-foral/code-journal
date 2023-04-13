@@ -21,6 +21,7 @@ header {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 .view {
@@ -29,6 +30,7 @@ ul {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 .titles {
@@ -36,9 +38,7 @@ a {
 }
 
 .new {
-  border-bottom: none;
   font-size: 15px;
-  position: relative;
   border-radius: 10px;
   background-color: rgb(86, 43, 129);
 }

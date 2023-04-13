@@ -65,18 +65,17 @@ img {
 
 .titles {
   display: flex;
-  margin-bottom: 0;
-  margin-right: 55px;
-  padding-left: 50px;
+  position: relative;
 }
 
 .new {
-  justify-content: flex-end;
-  text-align: end;
-  align-self: flex-end;
   padding: 10px;
-  margin-bottom: 15px;
-  margin-left: 300px;
+}
+
+.top-r {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 768px) {
@@ -125,17 +124,7 @@ img {
   }
 
   .titles {
-    margin-bottom: 0;
-    margin-right: 55px;
-  }
-
-  .new {
+    display: flex;
     position: relative;
-    justify-content: flex-end;
-    text-align: end;
-    align-self: flex-end;
-    padding: 10px;
-    margin-left: 500px;
-    margin-bottom: 15px;
   }
 }
