@@ -55,11 +55,15 @@ function renderEntry(entry) {
   const $not = document.createElement('p');
   $not.textContent = entry.notes;
 
+  const $pen = document.createElement('i');
+  $pen.className = 'fa fa-pencil';
+
   $li.appendChild($top);
   $top.appendChild($rest);
   $top.appendChild($rested);
   $rest.appendChild($pic);
-  $rested.appendChild($ename);
+  $rested.appendChild($ename, $pen);
+  $rested.appendChild($pen);
   $rested.appendChild($not);
 
   return $li;
@@ -106,3 +110,6 @@ const $new = document.querySelector('.new');
 $new.addEventListener('click', function () {
   viewSwap('entry-form');
 });
+
+/* -----------------------------------------------------------------------
+---------------------------ENTRY FEATURE 3 ----------------------------- */
