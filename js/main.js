@@ -36,6 +36,7 @@ function subButton(event) {
 
 function renderEntry(entry) {
   const $li = document.createElement('li');
+  $li.setAttribute('data-entry-id', entry.entryId);
 
   const $top = document.createElement('div');
   $top.className = 'row';
@@ -58,11 +59,14 @@ function renderEntry(entry) {
   const $pen = document.createElement('i');
   $pen.className = 'fa fa-pencil';
 
+  // const $id = document.createAttribute('data-entry-id');
+  // $id.setAttribute = entry.entryId;
+
   $li.appendChild($top);
   $top.appendChild($rest);
   $top.appendChild($rested);
   $rest.appendChild($pic);
-  $rested.appendChild($ename, $pen);
+  $rested.appendChild($ename);
   $rested.appendChild($pen);
   $rested.appendChild($not);
 
@@ -70,6 +74,10 @@ function renderEntry(entry) {
 }
 
 const $unl = document.querySelector('ul');
+$unl.addEventListener('click', function () {
+  viewSwap('entries');
+
+});
 
 document.addEventListener('DOMContentLoaded', function () {
   for (let i = 0; i < data.entries.length; i++) {
