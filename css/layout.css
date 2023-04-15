@@ -78,6 +78,11 @@ img {
   justify-content: space-between;
 }
 
+.headerdiv {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;

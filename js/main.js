@@ -47,10 +47,13 @@ function renderEntry(entry) {
   const $rest = document.createElement('div');
   $rest.className = 'column-half';
 
+  const $headerdiv = document.createElement('div');
+  $headerdiv.className = 'headerdiv';
+
   const $pic = document.createElement('img');
   $pic.src = entry.photo;
 
-  const $ename = document.createElement('p');
+  const $ename = document.createElement('span');
   $ename.textContent = entry.title;
 
   const $not = document.createElement('p');
@@ -66,8 +69,8 @@ function renderEntry(entry) {
   $top.appendChild($rest);
   $top.appendChild($rested);
   $rest.appendChild($pic);
-  $rested.appendChild($ename);
-  $rested.appendChild($pen);
+  $rested.appendChild($headerdiv);
+  $headerdiv.append($ename, $pen);
   $rested.appendChild($not);
 
   return $li;
@@ -76,7 +79,9 @@ function renderEntry(entry) {
 const $unl = document.querySelector('ul');
 $unl.addEventListener('click', function () {
   viewSwap('entries');
-
+  for (let i = 0; i < data.entries.length; i++) {
+    // data.entries[i].closest('data-entry-id') =  data.editing;
+  }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
