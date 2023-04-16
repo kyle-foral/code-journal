@@ -25,11 +25,17 @@ function subButton(event) {
   if (data.entries.length !== 0) {
     toggleNoEntries();
   }
+  if (data.editing !== null) {
+    entry.entryId = data.editing;
+    data.entries.indexOf().replace(entry.entryId);
+    // matches(data.entries);
+    renderEntry(entry);
+  }
   data.nextEntryId++;
   data.entries.unshift(entry);
-  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  // $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   document.getElementById($form).reset();
-  return false;
+
 }
 /* ---------------------------------------------------------------------
 -----------------ENTRY PART FEATURE 2 ------------------------------ */
