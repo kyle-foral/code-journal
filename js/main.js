@@ -62,9 +62,6 @@ function renderEntry(entry) {
   const $pen = document.createElement('i');
   $pen.className = 'fa fa-pencil';
 
-  // const $id = document.createAttribute('data-entry-id');
-  // $id.setAttribute = entry.entryId;
-
   $li.appendChild($top);
   $top.appendChild($rest);
   $top.appendChild($rested);
@@ -77,11 +74,16 @@ function renderEntry(entry) {
 }
 
 const $unl = document.querySelector('ul');
-$unl.addEventListener('click', function () {
-  viewSwap('entries');
-  for (let i = 0; i < data.entries.length; i++) {
-    // data.entries[i].closest('data-entry-id') =  data.editing;
+
+$unl.addEventListener('click', function (event) {
+  if (event.target.matches('i')) {
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i] === event.target.closest('data-entry-id')) {
+        data.entries[i] = data.editing;
+      }
+    }
   }
+
 });
 
 document.addEventListener('DOMContentLoaded', function () {
