@@ -28,7 +28,7 @@ function subButton(event) {
   data.nextEntryId++;
   data.entries.unshift(entry);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
-  $form.reset();
+  document.getElementById($form).reset();
   return false;
 }
 /* ---------------------------------------------------------------------
@@ -76,14 +76,21 @@ function renderEntry(entry) {
 const $unl = document.querySelector('ul');
 
 $unl.addEventListener('click', function (event) {
+  const $eform = document.querySelector('.eform');
+  const $newentry = document.querySelector('.new-entry');
   if (event.target.matches('i')) {
     for (let i = 0; i < data.entries.length; i++) {
-      if (data.entries[i] === event.target.closest('data-entry-id')) {
-        data.entries[i] = data.editing;
+      // eslint-disable-next-line eqeqeq
+      if (data.entries[i].entryId == event.target.closest('li').getAttribute('data-entry-id')) {
+        data.editing = event.target.closest('li').getAttribute('data-entry-id');
+        $eform.children[0][0].value = data.entries[i].title;
+        $eform.children[0][1].value = data.entries[i].photo;
+        $eform.children[0][2].value = data.entries[i].notes;
+        viewSwap('entry-form');
+        $newentry.textContent = 'Edit Entry';
       }
     }
   }
-
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -123,7 +130,13 @@ $entryTop.addEventListener('click', function () {
 
 const $new = document.querySelector('.new');
 $new.addEventListener('click', function () {
+  const $eform = document.querySelector('.eform');
+  const $newentry = document.querySelector('.new-entry');
+  $eform.children[0][0].value = null;
+  $eform.children[0][1].value = null;
+  $eform.children[0][2].value = null;
   viewSwap('entry-form');
+  $newentry.textContent = 'New Entry';
 });
 
 /* -----------------------------------------------------------------------
