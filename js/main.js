@@ -12,30 +12,40 @@ const $form = document.querySelector('#form-id');
 $form.addEventListener('submit', subButton);
 
 function subButton(event) {
+  const $eform = document.querySelector('.eform');
   event.preventDefault();
-  const entry = {
-    entryId: data.nextEntryId,
-    title: event.target.elements.title.value,
-    photo: event.target.elements.myUrl.value,
-    notes: event.target.elements.notes.value
-  };
-  const $ul = document.querySelector('ul');
-  $ul.appendChild(renderEntry(entry));
+  let entry = {};
+
+  if (data.editing !== null) {
+
+    for (let i = 0; i < data.entries.length; i++) {
+      // eslint-disable-next-line eqeqeq
+      if (data.entries[i].entryId == data.editing) {
+        data.entries[i].title = $eform.children[0][0].value;
+        data.entries[i].photo = $eform.children[0][1].value;
+        data.entries[i].notes = $eform.children[0][2].value;
+      }
+    }
+    renderEntry(entry);
+  } else {
+    entry = {
+      entryId: data.nextEntryId,
+      title: event.target.elements.title.value,
+      photo: event.target.elements.myUrl.value,
+      notes: event.target.elements.notes.value
+    };
+    const $ul = document.querySelector('ul');
+    $ul.appendChild(renderEntry(entry));
+    data.nextEntryId++;
+    data.entries.unshift(entry);
+  }
   viewSwap('entries');
   if (data.entries.length !== 0) {
     toggleNoEntries();
   }
-  if (data.editing !== null) {
-    entry.entryId = data.editing;
-    data.entries.indexOf().replace(entry.entryId);
-    // matches(data.entries);
-    renderEntry(entry);
-  }
-  data.nextEntryId++;
-  data.entries.unshift(entry);
-  // $img.setAttribute('src', 'images/placeholder-image-square.jpg');
-  document.getElementById($form).reset();
-
+  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $form.reset();
+  data.editing = null;
 }
 /* ---------------------------------------------------------------------
 -----------------ENTRY PART FEATURE 2 ------------------------------ */
@@ -144,6 +154,5 @@ $new.addEventListener('click', function () {
   viewSwap('entry-form');
   $newentry.textContent = 'New Entry';
 });
-
 /* -----------------------------------------------------------------------
 ---------------------------ENTRY FEATURE 3 ----------------------------- */
