@@ -18,14 +18,13 @@ function subButton(event) {
   let entry = {};
   if (data.editing !== null) {
     for (let i = 0; i < data.entries.length; i++) {
-      // eslint-disable-next-line eqeqeq
       if (data.entries[i].entryId === data.editing.entryId) {
         data.entries[i].title = $eform.children[0][0].value;
         data.entries[i].photo = $eform.children[0][1].value;
         data.entries[i].notes = $eform.children[0][2].value;
         const $edited = renderEntry(data.editing);
-        for (let e = 0; i < $li.length; i++) {
-          if (Number($li[i].getAttribute('data-entry-id')) === data.editing.entryId) {
+        for (let e = 0; e < $li.length; e++) {
+          if (Number($li[e].getAttribute('data-entry-id')) === data.editing.entryId) {
             $li[e].replaceWith($edited);
           }
         }
@@ -101,8 +100,7 @@ $unl.addEventListener('click', function (event) {
   const $newentry = document.querySelector('.new-entry');
   if (event.target.matches('i')) {
     for (let i = 0; i < data.entries.length; i++) {
-      // eslint-disable-next-line eqeqeq
-      if (data.entries[i].entryId == event.target.closest('li').getAttribute('data-entry-id')) {
+      if (data.entries[i].entryId === Number(event.target.closest('li').getAttribute('data-entry-id'))) {
         data.editing = data.entries[i];
         $eform.children[0][0].value = data.entries[i].title;
         $eform.children[0][1].value = data.entries[i].photo;
