@@ -30,7 +30,7 @@ function subButton(event) {
         }
       }
     }
-    renderEntry(entry);
+
   } else {
     entry = {
       entryId: data.nextEntryId,
