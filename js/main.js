@@ -12,30 +12,51 @@ const $form = document.querySelector('#form-id');
 $form.addEventListener('submit', subButton);
 
 function subButton(event) {
+  const $eform = document.querySelector('.eform');
+  const $li = document.querySelectorAll('li');
   event.preventDefault();
-  const entry = {
-    entryId: data.nextEntryId,
-    title: event.target.elements.title.value,
-    photo: event.target.elements.myUrl.value,
-    notes: event.target.elements.notes.value
-  };
-  const $ul = document.querySelector('ul');
-  $ul.appendChild(renderEntry(entry));
+  let entry = {};
+  if (data.editing !== null) {
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === data.editing.entryId) {
+        data.entries[i].title = $eform.children[0][0].value;
+        data.entries[i].photo = $eform.children[0][1].value;
+        data.entries[i].notes = $eform.children[0][2].value;
+        const $edited = renderEntry(data.editing);
+        for (let e = 0; e < $li.length; e++) {
+          if (Number($li[e].getAttribute('data-entry-id')) === data.editing.entryId) {
+            $li[e].replaceWith($edited);
+          }
+        }
+      }
+    }
+
+  } else {
+    entry = {
+      entryId: data.nextEntryId,
+      title: event.target.elements.title.value,
+      photo: event.target.elements.myUrl.value,
+      notes: event.target.elements.notes.value
+    };
+    const $ul = document.querySelector('ul');
+    $ul.appendChild(renderEntry(entry));
+    data.nextEntryId++;
+    data.entries.unshift(entry);
+  }
   viewSwap('entries');
   if (data.entries.length !== 0) {
     toggleNoEntries();
   }
-  data.nextEntryId++;
-  data.entries.unshift(entry);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
-  return false;
+  data.editing = null;
 }
 /* ---------------------------------------------------------------------
 -----------------ENTRY PART FEATURE 2 ------------------------------ */
 
 function renderEntry(entry) {
   const $li = document.createElement('li');
+  $li.setAttribute('data-entry-id', entry.entryId);
 
   const $top = document.createElement('div');
   $top.className = 'row';
@@ -46,26 +67,50 @@ function renderEntry(entry) {
   const $rest = document.createElement('div');
   $rest.className = 'column-half';
 
+  const $headerdiv = document.createElement('div');
+  $headerdiv.className = 'headerdiv';
+
   const $pic = document.createElement('img');
   $pic.src = entry.photo;
 
-  const $ename = document.createElement('p');
+  const $ename = document.createElement('span');
   $ename.textContent = entry.title;
 
   const $not = document.createElement('p');
   $not.textContent = entry.notes;
 
+  const $pen = document.createElement('i');
+  $pen.className = 'fa fa-pencil';
+
   $li.appendChild($top);
   $top.appendChild($rest);
   $top.appendChild($rested);
   $rest.appendChild($pic);
-  $rested.appendChild($ename);
+  $rested.appendChild($headerdiv);
+  $headerdiv.append($ename, $pen);
   $rested.appendChild($not);
 
   return $li;
 }
 
 const $unl = document.querySelector('ul');
+
+$unl.addEventListener('click', function (event) {
+  const $eform = document.querySelector('.eform');
+  const $newentry = document.querySelector('.new-entry');
+  if (event.target.matches('i')) {
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === Number(event.target.closest('li').getAttribute('data-entry-id'))) {
+        data.editing = data.entries[i];
+        $eform.children[0][0].value = data.entries[i].title;
+        $eform.children[0][1].value = data.entries[i].photo;
+        $eform.children[0][2].value = data.entries[i].notes;
+        viewSwap('entry-form');
+        $newentry.textContent = 'Edit Entry';
+      }
+    }
+  }
+});
 
 document.addEventListener('DOMContentLoaded', function () {
   for (let i = 0; i < data.entries.length; i++) {
@@ -104,5 +149,13 @@ $entryTop.addEventListener('click', function () {
 
 const $new = document.querySelector('.new');
 $new.addEventListener('click', function () {
+  const $eform = document.querySelector('.eform');
+  const $newentry = document.querySelector('.new-entry');
+  $eform.children[0][0].value = null;
+  $eform.children[0][1].value = null;
+  $eform.children[0][2].value = null;
   viewSwap('entry-form');
+  $newentry.textContent = 'New Entry';
 });
+/* -----------------------------------------------------------------------
+---------------------------ENTRY FEATURE 3 ----------------------------- */
