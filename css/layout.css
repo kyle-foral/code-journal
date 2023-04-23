@@ -13,10 +13,23 @@
   flex-wrap: wrap;
 }
 
+.row-last {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+
 .column-full,
 .column-half {
   width: 100%;
   flex-wrap: wrap;
+}
+
+.column-full-last {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 input {
@@ -56,6 +69,7 @@ img {
 
 .sub {
   text-align: end;
+  justify-content: space-between;
 }
 
 .entry {
@@ -81,6 +95,14 @@ img {
 .headerdiv {
   display: flex;
   justify-content: space-between;
+}
+
+.delete {
+  background-color: white;
+  color: red;
+  border-color: white;
+  box-shadow: none;
+  right: 100px;
 }
 
 @media screen and (min-width: 768px) {
@@ -123,7 +145,7 @@ img {
   }
 
   .sub {
-    justify-content: flex-end;
+    justify-content: space-between;
     text-align: end;
     align-items: flex-end;
   }
