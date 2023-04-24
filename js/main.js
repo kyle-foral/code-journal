@@ -169,7 +169,7 @@ const shader = document.querySelector('.column-full-modal');
 
 deleteB.addEventListener('click', popp);
 deny.addEventListener('click', closedpop);
-confirm.addEventListener('click', closedpop);
+confirm.addEventListener('click', deletepop);
 
 function popp(event) {
   shader.setAttribute('class', 'dark');
@@ -179,4 +179,20 @@ function popp(event) {
 function closedpop(event) {
   shader.setAttribute('class', 'overlay');
   background.setAttribute('class', 'noshow');
+}
+
+function deletepop(event) {
+  const $li = document.querySelectorAll('li');
+  for (let d = 0; d < $li.length; d++) {
+    if (Number($li[d].getAttribute('data-entry-id')) === data.editing.entryId) {
+      $li[d].remove();
+    }
+  }
+
+  if (data.entries.length !== 0) {
+    toggleNoEntries();
+  }
+  shader.setAttribute('class', 'overlay');
+  background.setAttribute('class', 'noshow');
+  viewSwap('entries');
 }

@@ -48,17 +48,7 @@ i {
 }
 
 .dark {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 50vh;
-  flex-wrap: wrap;
   background: rgb(0 0 0 / 50%);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  left: 0;
 }
 
 .bg {
@@ -66,16 +56,33 @@ i {
 }
 
 .show {
-  align-items: center;
-  text-align: center;
-  justify-content: center;
   background-color: white;
-  width: 500px;
-  height: 300px;
-  margin-left: 50%;
-  margin-top: 20%;
 }
 
-.noshow {
-  display: none;
+#cancel {
+  background-color: grey;
+  color: black;
+  border-style: none;
+  height: 50px;
+  width: 150px;
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+#no-button {
+  background-color: red;
+  color: white;
+  border-style: none;
+  height: 50px;
+  width: 150px;
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.delete {
+  width: 100px;
+  background-color: white;
+  color: red;
+  border-color: white;
+  box-shadow: none;
 }

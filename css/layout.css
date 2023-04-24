@@ -98,11 +98,41 @@ img {
 }
 
 .delete {
-  background-color: white;
-  color: red;
-  border-color: white;
-  box-shadow: none;
-  right: 100px;
+  left: 5%;
+  top: 50%;
+}
+
+.show {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 500px;
+  height: 154px;
+  margin-top: 67%;
+  margin-left: 15%;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14%;
+}
+
+.noshow {
+  display: none;
+}
+
+.dark {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -153,5 +183,43 @@ img {
   .titles {
     display: flex;
     position: relative;
+  }
+
+  .show {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 500px;
+    height: 154px;
+    margin-left: 40%;
+    margin-top: 20%;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14%;
+  }
+
+  .noshow {
+    display: none;
+  }
+
+  .dark {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 50vh;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .delete {
+    left: 5%;
+    top: 50%;
   }
 }
