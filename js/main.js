@@ -157,5 +157,48 @@ $new.addEventListener('click', function () {
   viewSwap('entry-form');
   $newentry.textContent = 'New Entry';
 });
+
 /* -----------------------------------------------------------------------
----------------------------ENTRY FEATURE 3 ----------------------------- */
+---------------------------ENTRY FEATURE 4 ----------------------------- */
+
+const deleteB = document.querySelector('.delete');
+const confirm = document.querySelector('#no-button');
+const deny = document.querySelector('#cancel');
+const background = document.querySelector('.row-modal');
+const shader = document.querySelector('.column-full-modal');
+
+deleteB.addEventListener('click', popp);
+deny.addEventListener('click', closedpop);
+confirm.addEventListener('click', deletepop);
+
+function popp(event) {
+  shader.setAttribute('class', 'dark');
+  background.setAttribute('class', 'show');
+}
+
+function closedpop(event) {
+  shader.setAttribute('class', 'overlay');
+  background.setAttribute('class', 'noshow');
+}
+
+function deletepop(event) {
+  const $li = document.querySelectorAll('li');
+  for (let d = 0; d < $li.length; d++) {
+    if (Number($li[d].getAttribute('data-entry-id')) === data.editing.entryId) {
+      $li[d].remove();
+    }
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === data.editing.entryId) {
+        const removed = data.entries[i].entryId;
+        data.entries.splice(0, removed);
+      }
+    }
+  }
+  if (data.entries.length !== 0) {
+    toggleNoEntries();
+  }
+  shader.setAttribute('class', 'overlay');
+  background.setAttribute('class', 'noshow');
+  data.editing = null;
+  viewSwap('entries');
+}

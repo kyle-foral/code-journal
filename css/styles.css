@@ -46,3 +46,43 @@ a {
 i {
   color: rgb(86, 43, 129);
 }
+
+.dark {
+  background: rgb(0 0 0 / 50%);
+}
+
+.bg {
+  background-color: white;
+}
+
+.show {
+  background-color: white;
+}
+
+#cancel {
+  background-color: grey;
+  color: black;
+  border-style: none;
+  height: 50px;
+  width: 150px;
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+#no-button {
+  background-color: red;
+  color: white;
+  border-style: none;
+  height: 50px;
+  width: 150px;
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.delete {
+  width: 100px;
+  background-color: white;
+  color: red;
+  border-color: white;
+  box-shadow: none;
+}
