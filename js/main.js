@@ -14,7 +14,6 @@ $form.addEventListener('submit', subButton);
 function subButton(event) {
   const $eform = document.querySelector('.eform');
   const $li = document.querySelectorAll('li');
-  // console.log($form);
   event.preventDefault();
   let entry = {};
   if (data.editing !== null) {
@@ -163,11 +162,9 @@ $new.addEventListener('click', function () {
 ---------------------------ENTRY FEATURE 4 ----------------------------- */
 
 const deleteB = document.querySelector('.delete');
-
 const confirm = document.querySelector('#no-button');
 const deny = document.querySelector('#cancel');
 const background = document.querySelector('.row-modal');
-
 const shader = document.querySelector('.column-full-modal');
 
 deleteB.addEventListener('click', popp);
