@@ -68,8 +68,10 @@ img {
 }
 
 .sub {
-  text-align: end;
+  display: flex;
   justify-content: space-between;
+  text-align: center;
+  align-items: center;
 }
 
 .entry {
@@ -175,9 +177,10 @@ img {
   }
 
   .sub {
+    display: flex;
     justify-content: space-between;
-    text-align: end;
-    align-items: flex-end;
+    text-align: center;
+    align-items: center;
   }
 
   .titles {
