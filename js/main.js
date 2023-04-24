@@ -187,12 +187,18 @@ function deletepop(event) {
     if (Number($li[d].getAttribute('data-entry-id')) === data.editing.entryId) {
       $li[d].remove();
     }
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === data.editing.entryId) {
+        const removed = data.entries[i].entryId;
+        data.entries.splice(0, removed);
+      }
+    }
   }
-
   if (data.entries.length !== 0) {
     toggleNoEntries();
   }
   shader.setAttribute('class', 'overlay');
   background.setAttribute('class', 'noshow');
+  data.editing = null;
   viewSwap('entries');
 }

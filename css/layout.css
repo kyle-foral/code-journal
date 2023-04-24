@@ -99,11 +99,6 @@ img {
   justify-content: space-between;
 }
 
-.delete {
-  left: 5%;
-  top: 50%;
-}
-
 .show {
   align-items: center;
   text-align: center;
@@ -219,10 +214,5 @@ img {
     top: 0;
     right: 0;
     left: 0;
-  }
-
-  .delete {
-    left: 5%;
-    top: 50%;
   }
 }
