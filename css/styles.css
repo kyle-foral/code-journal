@@ -46,3 +46,36 @@ a {
 i {
   color: rgb(86, 43, 129);
 }
+
+.dark {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+  flex-wrap: wrap;
+  background: rgb(0 0 0 / 50%);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.bg {
+  background-color: white;
+}
+
+.show {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: white;
+  width: 500px;
+  height: 300px;
+  margin-left: 50%;
+  margin-top: 20%;
+}
+
+.noshow {
+  display: none;
+}
